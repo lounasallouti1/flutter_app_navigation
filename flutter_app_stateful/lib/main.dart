@@ -12,6 +12,8 @@ class MyWidget extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<MyWidget> {
+  int compteur = 0;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,7 +22,16 @@ class _MyWidgetState extends State<MyWidget> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Stateful Widget"),
+              Text("StatefulWidget"),
+              Text("Le compteur est a : $compteur"),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    compteur++;
+                  });
+                },
+                child: Text("Incrémenter"),
+              ),
             ],
           ),
         ),
