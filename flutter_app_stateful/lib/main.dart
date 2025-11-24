@@ -22,36 +22,34 @@ class _MyWidgetState extends State<MyWidget> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(" StatefulWidget"),
+              Text("StatefulWidget"),
               Text("La valeur du compteur est : $compteur"),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
+                  IconButton(
                     onPressed: () {
                       setState(() {
                         compteur--;
                       });
                     },
-                    child: Text("-"),
+                    icon: Icon(Icons.remove),
                   ),
-                  SizedBox(width: 10),
-                  ElevatedButton(
+                  IconButton(
                     onPressed: () {
                       setState(() {
                         compteur = 0;
                       });
                     },
-                    child: Text("Réinitialiser"),
+                    icon: Icon(Icons.refresh),
                   ),
-                  SizedBox(width: 10),
-                  ElevatedButton(
+                  IconButton(
                     onPressed: () {
                       setState(() {
                         compteur++;
                       });
                     },
-                    child: Text("+"),
+                    icon: Icon(Icons.add),
                   ),
                 ],
               ),
